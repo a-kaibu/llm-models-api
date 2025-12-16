@@ -1,5 +1,9 @@
 # llm-models-api
 
+> [!important]
+> This API is deprecated.  
+> Please use [Models.dev](https://models.dev)  
+
 A lightweight REST API proxy for OpenRouter's models API. This proxy allows for enhanced filtering of AI models by provider, model name, and other parameters.
 
 ## Features
@@ -15,10 +19,6 @@ A lightweight REST API proxy for OpenRouter's models API. This proxy allows for 
 
 ## API Usage
 
-### Base Endpoint
-
-<https://llm-models-api.yashikota.workers.dev>
-
 Returns all models from OpenRouter API.
 
 ### Query Parameters
@@ -31,32 +31,6 @@ Returns all models from OpenRouter API.
 | `modality` | string | Filter by modality | `modality=text+image` |
 | `ignore_free` | boolean | Exclude models with `:free` in their ID | `ignore_free=true` |
 | `strip_suffix` | boolean | Remove suffixes (like `:free`) from model IDs | `strip_suffix=true` |
-
-### Examples
-
-#### Get all models
-
-<https://llm-models-api.yashikota.workers.dev/models>
-
-#### Get only models from OpenAI and Google
-
-<https://llm-models-api.yashikota.workers.dev/models?provider=openai,google>
-
-#### Get models with at least 32K context length
-
-<https://llm-models-api.yashikota.workers.dev/models?min_context=32000>
-
-#### Get models excluding free ones
-
-<https://llm-models-api.yashikota.workers.dev/models?ignore_free=true>
-
-#### Get models with suffixes removed from IDs
-
-<https://llm-models-api.yashikota.workers.dev/models?strip_suffix=true>
-
-#### Combine multiple filters
-
-<https://llm-models-api.yashikota.workers.dev/models?provider=mistralai&min_context=32000&strip_suffix=true>
 
 ## Response Format
 
